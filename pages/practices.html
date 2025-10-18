@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Практики</title>
-    </head>
-    <body>
-        <div id="header">Хэдер</div>
-        <div id="menu">
-            <ul>
-                <li><a href="../index.html">Главная</a></li>
-                <li><a href="news.html">Новости</a></li>
-                <li><a href="practices.html">Практики</a></li>
-                <li><a href="goods.html">Товары</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практики</title>
+    <link rel="stylesheet" href="../style/styles.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="header">Хэдер</div>
+        <div class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
             </ul>
         </div>
-        <div id="content">
-            <div>
-                <h2>Практика 1</h2>
-                <p>Дата: 01.10.2025 | Автор: Максимов С.Э.</p>
-                <p>Текст практики 1: Начало работы над базовой структурой HTML. Изучены теги doctype, html, head, body и title.</p>
-            </div>
-            <div>
-                <h2>Практика 2</h2>
-                <p>Дата: 05.10.2025 | Автор: Максимов С.Э.</p>
-                <p>Текст практики 2: Добавление метаданных и базовой навигации на страницу.</p>
-            </div>
-            <div>
-                <h2>Практика 3</h2>
-                <p>Дата: 10.10.2025 | Автор: Максимов С.Э.</p>
-                <p>Текст практики 3: Создание дополнительных страниц и настройка GitHub Pages.</p>
+        <div class="content">
+            <div class="practices-section">
+                <div class="practice-card">
+                    <h2 class="practice-title">Практика 1</h2>
+                    <p class="practice-meta">Дата: 01.10.2025 | Автор: Максимов С.Э.</p>
+                    <p class="practice-text">Текст практики 1: Начало работы над базовой структурой HTML.</p>
+                </div>
+                <div class="practice-card">
+                    <h2 class="practice-title">Практика 2</h2>
+                    <p class="practice-meta">Дата: 05.10.2025 | Автор: Максимов С.Э.</p>
+                    <p class="practice-text">Текст практики 2: Добавление метаданных и базовой навигации.</p>
+                </div>
+                <div class="practice-card">
+                    <h2 class="practice-title">Практика 3</h2>
+                    <p class="practice-meta">Дата: 10.10.2025 | Автор: Максимов С.Э.</p>
+                    <p class="practice-text">Текст практики 3: Создание дополнительных страниц.</p>
+                </div>
             </div>
         </div>
-        <div id="footer">Футер</div>
-    </body>
+        <div class="footer">Футер</div>
+    </div>
+</body>
 </html>

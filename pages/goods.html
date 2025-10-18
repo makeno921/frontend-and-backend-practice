@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Товары</title>
-    </head>
-    <body>
-        <div id="header">Хэдер</div>
-        <div id="menu">
-            <ul>
-                <li><a href="../index.html">Главная</a></li>
-                <li><a href="news.html">Новости</a></li>
-                <li><a href="practices.html">Практики</a></li>
-                <li><a href="goods.html">Товары</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Товары</title>
+    <link rel="stylesheet" href="../style/styles.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="header">Хэдер</div>
+        <div class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
             </ul>
         </div>
-        <div id="content">
-            <div>
-                <img src="../images/goods1.jpg" alt="Товар 1" width="200" height="200">
-                <p>Название товара 1</p>
-                <p>Цена: 100 руб.</p>
-            </div>
-            <div>
-                <img src="../images/goods2.jpg" alt="Товар 2" width="200" height="200">
-                <p>Название товара 2</p>
-                <p>Цена: 200 руб.</p>
-            </div>
-            <div>
-                <img src="../images/goods3.jpg" alt="Товар 3" width="200" height="200">
-                <p>Название товара 3</p>
-                <p>Цена: 300 руб.</p>
+        <div class="content">
+            <div class="goods-section">
+                <div class="goods-card">
+                    <img src="../images/goods1.jpg" alt="Товар 1" class="goods-image">
+                    <h2 class="goods-title">Название товара 1</h2>
+                    <p class="goods-price">Цена: 100 руб.</p>
+                </div>
+                <div class="goods-card">
+                    <img src="../images/goods2.jpg" alt="Товар 2" class="goods-image">
+                    <h2 class="goods-title">Название товара 2</h2>
+                    <p class="goods-price">Цена: 200 руб.</p>
+                </div>
+                <div class="goods-card">
+                    <img src="../images/goods3.jpg" alt="Товар 3" class="goods-image">
+                    <h2 class="goods-title">Название товара 3</h2>
+                    <p class="goods-price">Цена: 300 руб.</p>
+                </div>
             </div>
         </div>
-        <div id="footer">Футер</div>
-    </body>
+        <div class="footer">Футер</div>
+    </div>
+</body>
 </html>

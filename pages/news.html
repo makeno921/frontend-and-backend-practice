@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Новости</title>
-    </head>
-    <body>
-        <div id="header">Хэдер</div>
-        <div id="menu">
-            <ul>
-                <li><a href="../index.html">Главная</a></li>
-                <li><a href="news.html">Новости</a></li>
-                <li><a href="practices.html">Практики</a></li>
-                <li><a href="goods.html">Товары</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости</title>
+    <link rel="stylesheet" href="../style/styles.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="header">Хэдер</div>
+        <div class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
             </ul>
         </div>
-        <div id="content">
-            <div>
-                <h2>Заголовок новости 1</h2>
-                <p>Дата: 2025-10-01 | Автор: Иванов И.И.</p>
-                <p>Текст новости 1: Это пример текста о важном событии.</p>
-            </div>
-            <div>
-                <h2>Заголовок новости 2</h2>
-                <p>Дата: 2025-10-05 | Автор: Петров П.П.</p>
-                <p>Текст новости 2: Описание другого события с деталями.</p>
-            </div>
-            <div>
-                <h2>Заголовок новости 3</h2>
-                <p>Дата: 2025-10-10 | Автор: Сидоров С.С.</p>
-                <p>Текст новости 3: Ещё одна новость для примера.</p>
+        <div class="content">
+            <div class="news-section">
+                <div class="news-card">
+                    <h2 class="news-title">Заголовок новости 1</h2>
+                    <p class="news-meta">Дата: 2025-10-01 | Автор: Максимов С.Э.</p>
+                    <p class="news-text">Текст новости 1: Это пример текста о важном событии.</p>
+                </div>
+                <div class="news-card">
+                    <h2 class="news-title">Заголовок новости 2</h2>
+                    <p class="news-meta">Дата: 2025-10-05 | Автор: Максимов С.Э.</p>
+                    <p class="news-text">Текст новости 2: Описание другого события с деталями.</p>
+                </div>
+                <div class="news-card">
+                    <h2 class="news-title">Заголовок новости 3</h2>
+                    <p class="news-meta">Дата: 2025-10-10 | Автор: Максимов С.Э.</p>
+                    <p class="news-text">Текст новости 3: Ещё одна новость для примера.</p>
+                </div>
             </div>
         </div>
-        <div id="footer">Футер</div>
-    </body>
+        <div class="footer">Футер</div>
+    </div>
+</body>
 </html>
