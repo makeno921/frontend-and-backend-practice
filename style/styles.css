@@ -14,6 +14,13 @@ body {
     background: white;
     min-height: 100vh;
     box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
 }
 
 /* ===== ШАПКА ===== */
@@ -25,12 +32,14 @@ body {
     font-size: 50px;
     font-weight: bold;
     letter-spacing: 2px;
+    grid-area: header;
 }
 
 /* ===== НАВИГАЦИЯ ===== */
 .nav {
     background: #2c3e50;
     padding: 20px 0;
+    grid-area: nav;
 }
 
 .nav-list {
@@ -65,12 +74,27 @@ body {
     padding: 40px;
     max-width: 900px;
     margin: 0 auto;
+    grid-area: main;
+
+    /* Новое: Flexbox для основного контента */
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
 /* ===== ГЛАВНАЯ СТРАНИЦА ===== */
 .profile-header {
     text-align: center;
     margin-bottom: 40px;
+
+    /* Новое: Grid для профиля
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+        "photo title"
+        "photo name"
+        "photo group";
+    gap: 20px;
+    align-items: center;  */
 }
 
 .profile-title {
@@ -78,6 +102,7 @@ body {
     color: #2c3e50;
     margin-bottom: 10px;
     font-weight: 300;
+    grid-area: title;
 }
 
 .profile-photo {
@@ -85,9 +110,9 @@ body {
     height: 280px;
     border-radius: 15px;
     object-fit: cover;
-    margin: 20px auto;
     border: 4px solid #667eea;
     box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    grid-area: photo;
 }
 
 .profile-name {
@@ -95,12 +120,14 @@ body {
     color: #2c3e50;
     margin: 10px 0;
     font-weight: 500;
+    grid-area: name;
 }
 
 .profile-group {
     font-size: 18px;
     color: #7f8c8d;
     margin: 5px 0;
+    grid-area: group;
 }
 
 /* ===== ОБО МНЕ ===== */
@@ -110,6 +137,11 @@ body {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     padding: 25px;
     border-radius: 15px;
+
+    /* Новое: Flexbox для выравнивания */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .about-title {
@@ -136,27 +168,28 @@ body {
     padding-left: 10px;
 }
 
-.skills-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 20px;
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
 }
 
 .skill-tag {
     background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
     color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
+    padding: 12px 25px;
+    border-radius: 25px;
     font-weight: 600;
     font-size: 14px;
     box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
     transition: all 0.3s ease;
-    cursor: pointer;
-    flex: 1;
     text-align: center;
-    min-width: 0;
+
+    /* Новое: Flexbox для центрирования */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .skill-tag:hover {
@@ -169,19 +202,43 @@ body {
     margin-top: 30px;
 }
 
+.section-title {
+    font-size: 28px;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+/* Новое: Grid для карточек опыта */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
 .experience-card {
     background: white;
-    padding: 15px;
-    margin: 15px 0;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    border-left: 4px solid #4facfe;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border-left: 4px solid #667eea;
+    transition: transform 0.3s ease;
+
+    /* Новое: Flexbox для внутренней структуры */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
 }
 
 .experience-title {
-    font-size: 18px;
+    font-size: 20px;
     color: #2c3e50;
-    margin: 0 0 10px 0;
+    margin: 0;
     font-weight: 600;
 }
 
@@ -191,61 +248,59 @@ body {
     margin: 0;
 }
 
-/* ===== ФУТЕР ===== */
-.footer {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-    color: white;
-    text-align: center;
-    padding: 30px;
-    margin-top: 50px;
-}
-
 /* ===== НОВОСТИ ===== */
 .news-header {
     font-size: 28px;
     color: #2c3e50;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     font-weight: 300;
     text-align: center;
 }
 
 .news-section {
     margin-top: 20px;
+
+    /* Новое: Grid для новостей */
+    display: grid;
+    gap: 25px;
 }
 
 .news-card {
     background: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
     border-left: 4px solid #667eea;
+
+    /* Новое: Flexbox для структуры карточки */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .news-title {
     font-size: 24px;
     color: #2c3e50;
-    margin: 0 0 10px 0;
+    margin: 0;
     font-weight: bold;
 }
 
 .news-meta {
     font-size: 14px;
     color: #7f8c8d;
-    margin: 0 0 10px 0;
+    margin: 0;
 }
 
 .news-text {
     color: #333;
     line-height: 1.6;
+    margin: 0;
 }
 
 .read-more {
-    display: block;
-    text-align: left;
+    align-self: flex-start;
     color: #4facfe;
     text-decoration: none;
-    margin-top: 10px;
     font-size: 14px;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -259,68 +314,101 @@ body {
 .practices-header {
     font-size: 28px;
     color: #2c3e50;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     font-weight: 300;
     text-align: center;
 }
 
 .practices-section {
     margin-top: 20px;
+
+    /* Изменено: Flexbox для вертикального списка */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .practice-card {
     background: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
+    padding: 25px;
+    border-radius: 12px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     border-left: 4px solid #4facfe;
+
+    /* Изменено: Flexbox для горизонтального расположения */
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    transition: transform 0.3s ease;
+}
+
+.practice-card:hover {
+    transform: translateX(5px);
+}
+
+.practice-content {
+    /* Новое: Flex-grow для занимания оставшегося пространства */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .practice-title {
-    font-size: 24px;
+    font-size: 22px;
     color: #2c3e50;
-    margin: 0 0 10px 0;
+    margin: 0;
     font-weight: bold;
 }
 
 .practice-meta {
     font-size: 14px;
     color: #7f8c8d;
-    margin: 0 0 10px 0;
+    margin: 0;
+    font-style: italic;
 }
 
 .practice-text {
     color: #333;
     line-height: 1.6;
+    margin: 0;
 }
 
 /* ===== ТОВАРЫ ===== */
 .goods-header {
     font-size: 28px;
     color: #2c3e50;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     font-weight: 300;
     text-align: center;
 }
 
 .goods-section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    /* Изменено: Grid для товаров */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
     margin-top: 20px;
 }
 
 .goods-card {
     background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
     border-left: 4px solid #00f2fe;
     text-align: center;
-    flex: 1 1 calc(33.33% - 13.33px); /* 3 в ряд с учетом gap */
-    min-width: 200px;
-    max-width: 300px;
+
+    /* Изменено: Flexbox для карточки товара */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.3s ease;
+}
+
+.goods-card:hover {
+    transform: translateY(-5px);
 }
 
 .goods-image {
@@ -332,37 +420,38 @@ body {
 }
 
 .goods-title {
-    font-size: 18px;
+    font-size: 20px;
     color: #2c3e50;
-    margin: 10px 0;
+    margin: 0;
     font-weight: bold;
 }
 
 .goods-description {
     font-size: 14px;
     color: #333;
-    margin: 10px 0;
+    margin: 0;
     line-height: 1.5;
+    flex-grow: 1;
 }
 
 .goods-price {
-    font-size: 16px;
-    color: #7f8c8d;
+    font-size: 18px;
+    color: #e74c3c;
     font-weight: bold;
-    margin: 10px 0;
+    margin: 0;
 }
 
 .add-to-cart {
     background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
     color: white;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 20px;
+    border-radius: 25px;
     cursor: pointer;
     font-size: 14px;
     font-weight: 600;
-    margin-top: 10px;
     transition: all 0.3s ease;
+    width: 100%;
 }
 
 .add-to-cart:hover {
@@ -370,11 +459,26 @@ body {
     box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
 }
 
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 768px) {
+    /* ... остальные стили ... */
+
+    .practice-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .goods-section {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* ===== КОНТАКТЫ ===== */
 .contacts-header {
     font-size: 28px;
     color: #2c3e50;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     font-weight: 300;
     text-align: center;
 }
@@ -386,22 +490,40 @@ body {
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     border-radius: 15px;
     border-left: 5px solid #667eea;
+
+    /* Новое: Grid для контактов */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    align-items: start;
 }
 
 .contact-info {
     font-size: 18px;
     color: #333;
-    margin: 10px 0;
+    margin: 0;
+
+    /* Новое: Flexbox для контактной информации */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .contact-info strong {
     color: #2c3e50;
 }
 
+.social-links {
+    /* Новое: Flexbox для социальных ссылок */
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 10px 0;
+}
+
 .social-link {
     color: #4facfe;
     text-decoration: none;
-    margin: 0 10px;
     font-weight: 500;
     transition: color 0.3s ease;
 }
@@ -413,17 +535,97 @@ body {
 .contact-button {
     background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
     color: white;
-    padding: 12px 24px;
+    padding: 15px 40px;
     border: none;
-    border-radius: 25px;
+    border-radius: 30px;
     cursor: pointer;
     font-size: 16px;
     font-weight: 600;
     margin-top: 20px;
     transition: all 0.3s ease;
+    grid-column: 1 / -1;
+    justify-self: center;
 }
 
 .contact-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+    box-shadow: 0 8px 25px rgba(79, 172, 254, 0.4);
+}
+
+/* ===== ФУТЕР ===== */
+.footer {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+    grid-area: footer;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .content {
+        padding: 20px;
+        gap: 30px;
+    }
+
+    .profile-header {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "photo"
+            "title"
+            "name"
+            "group";
+        text-align: center;
+        gap: 15px;
+    }
+
+    .profile-photo {
+        justify-self: center;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .practices-section {
+        grid-template-columns: 1fr;
+    }
+
+    .goods-section {
+        grid-template-columns: 1fr;
+    }
+
+    .contacts-section {
+        grid-template-columns: 1fr;
+        padding: 25px;
+    }
+
+    .header {
+        font-size: 36px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .goods-card {
+        padding: 20px;
+    }
+
+    .contact-button {
+        width: 100%;
+    }
 }
