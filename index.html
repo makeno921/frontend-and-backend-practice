@@ -7,54 +7,64 @@
     <link rel="stylesheet" href="style/styles.css">
 </head>
 <body>
-    <div class="page-container">
-        <div class="header">Моё портфолио</div>
-        <div class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/practices.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="pages/contacts.html">Контакты</a></li>
-            </ul>
-        </div>
-        <div class="content">
-            <div class="profile-header">
-                <h1 class="profile-title">Информация об авторе</h1>
-                <img class="profile-photo" src="images/photo.png" alt="Фото автора">
-                <h2 class="profile-name">Максимов Святослав Эдуардович</h2>
-                <p class="profile-group">ЭФБО-05-24</p>
+<div class="page-container">
+    <header class="header">
+        <h1>Моё портфолио</h1>
+    </header>
+
+    <nav class="nav">
+        <ul class="nav-list">
+            <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+            <li class="nav-item"><a class="nav-link" href="pages/news.html">Новости</a></li>
+            <li class="nav-item"><a class="nav-link" href="pages/practices.html">Практики</a></li>
+            <li class="nav-item"><a class="nav-link" href="pages/goods.html">Товары</a></li>
+            <li class="nav-item"><a class="nav-link" href="pages/contacts.html">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <article class="profile-header">
+            <h1 class="profile-title">Информация об авторе</h1>
+            <img class="profile-photo" src="images/photo.png" alt="Фото автора">
+            <h2 class="profile-name">Максимов Святослав Эдуардович</h2>
+            <p class="profile-group">ЭФБО-05-24</p>
+        </article>
+
+        <section class="about-me">
+            <h2 class="about-title">Обо мне</h2>
+            <p>Студент, увлекаюсь веб-разработкой. Изучаю HTML, CSS, JavaScript и Python. Люблю создавать красивые и функциональные сайты.</p>
+        </section>
+
+        <section class="skills-section">
+            <h2 class="skills-title">Мои навыки</h2>
+            <div class="skills-grid">
+                <div class="skill-tag">Python</div>
+                <div class="skill-tag">Postgresql</div>
+                <div class="skill-tag">HTML/CSS</div>
+                <div class="skill-tag">JavaScript</div>
             </div>
-            <div class="about-me">
-                <h2 class="about-title">Обо мне</h2>
-                <p>Студент, увлекаюсь веб-разработкой. Изучаю HTML, CSS, JavaScript и Python. Люблю создавать красивые и функциональные сайты.</p>
-            </div>
-            <div class="skills-section">
-                <h2 class="skills-title">Мои навыки</h2>
-                <div class="skills-container">
-                    <div class="skill-tag">Python</div>
-                    <div class="skill-tag">Postgresql</div>
-                    <div class="skill-tag">HTML/CSS</div>
-                    <div class="skill-tag">JavaScript</div>
-                </div>
-            </div>
-            <div class="experience-section">
-                <h2 class="section-title">Мой опыт работы</h2>
-                <div class="experience-card">
-                    <h3 class="experience-title">Технический ассистент в xAI</h3>
-                    <p class="experience-desc">Работал над тестированием голосового режима с сентября 2024 по октябрь 2025. Участвовал в устранении ошибок и улучшении пользовательского опыта. Проект завершился запуском обновления 18 октября 2025, что стало важным этапом в моей карьере.</p>
-                </div>
-                <div class="experience-card">
-                    <h3 class="experience-title">Организатор турниров по Dota 2</h3>
-                    <p class="experience-desc">С июня 2023 по август 2024 организовывал любительские турниры по Dota 2 в Москве, включая онлайн-чемпионат, завершившийся 15 августа 2024. Отвечал за расписание матчей, координацию команд и стриминг, что развило мои навыки управления проектами и работы в команде.</p>
-                </div>
-                <div class="experience-card">
-                    <h3 class="experience-title">Фрилансер в графическом дизайне</h3>
-                    <p class="experience-desc">С января 2025 по настоящее время создаю логотипы и афиши для местных компаний. Последний проект — дизайн для фестиваля 18 октября 2025, выполненный за неделю до события, что подтвердило мою способность работать под давлением.</p>
-                </div>
-            </div>
-        </div>
-        <div class="footer">&copy; 2024 Мой сайт</div>
-    </div>
+        </section>
+
+        <section class="experience-section">
+            <h2 class="section-title">Мой опыт работы</h2>
+            <article class="experience-card">
+                <h3 class="experience-title">Технический ассистент в xAI</h3>
+                <p class="experience-desc">Работал над тестированием голосового режима с сентября 2024 по октябрь 2025. Участвовал в устранении ошибок и улучшении пользовательского опыта. Проект завершился запуском обновления 18 октября 2025, что стало важным этапом в моей карьере.</p>
+            </article>
+            <article class="experience-card">
+                <h3 class="experience-title">Организатор турниров по Dota 2</h3>
+                <p class="experience-desc">С июня 2023 по август 2024 организовывал любительские турниры по Dota 2 в Москве, включая онлайн-чемпионат, завершившийся 15 августа 2024. Отвечал за расписание матчей, координацию команд и стриминг, что развило мои навыки управления проектами и работы в команде.</p>
+            </article>
+            <article class="experience-card">
+                <h3 class="experience-title">Фрилансер в графическом дизайне</h3>
+                <p class="experience-desc">С января 2025 по настоящее время создаю логотипы и афиши для местных компаний. Последний проект — дизайн для фестиваля 18 октября 2025, выполненный за неделю до события, что подтвердило мою способность работать под давлением.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Мой сайт</p>
+    </footer>
+</div>
 </body>
 </html>
