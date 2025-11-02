@@ -17,34 +17,43 @@
             <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
             <li class="nav__item"><a class="nav__link" href="news.html">Новости</a></li>
             <li class="nav__item"><a class="nav__link" href="practices.html">Практики</a></li>
-            <li class="nav__item"><a class="nav__link" href="goods.html">Товары</a></li>
+            <li class="nav__item"><a class="nav__link nav__link--active" href="goods.html">Товары</a></li>
             <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
         </ul>
+        <button id="theme-toggle">🌙 Тёмная</button>
     </nav>
 
     <main class="content">
         <h2 class="goods__header">Каталог товаров</h2>
         <section class="goods__list">
-            <article class="goods__card">
-                <img src="../images/goods1.jpg" alt="Лампа для монитора" class="goods__image">
-                <h2 class="goods__title">Лампа для монитора</h2>
-                <p class="goods__desc">Компактная лампа для монитора с регулируемым светом. Идеально подходит для работы в вечернее время.</p>
-                <p class="goods__price">1500 руб.</p>
-                <button class="goods__button">В корзину</button>
+            <article class="card card--hover">
+                <img src="../images/goods1.jpg" alt="Лампа для монитора" class="card__image">
+                <h2 class="card__title">Лампа для монитора</h2>
+                <p class="card__desc">Компактная лампа для монитора с регулируемым светом. Идеально подходит для работы в вечернее время.</p>
+                <div class="card__price">1500 руб.</div>
+                <button class="card__button">В корзину</button>
             </article>
-            <article class="goods__card">
-                <img src="../images/goods2.jpg" alt="Кружка с подогревом" class="goods__image">
-                <h2 class="goods__title">Кружка с подогревом</h2>
-                <p class="goods__desc">Умная кружка, поддерживающая тепло напитков до 2 часов. Работает от USB.</p>
-                <p class="goods__price">2500 руб.</p>
-                <button class="goods__button">В корзину</button>
+            <article class="card card--hover card--discount">
+                <img src="../images/goods2.jpg" alt="Кружка с подогревом" class="card__image">
+                <div class="card__discount">-20%</div>
+                <h2 class="card__title">Кружка с подогревом</h2>
+                <p class="card__desc">Умная кружка, поддерживающая тепло напитков до 2 часов. Работает от USB.</p>
+                <div class="card__price">
+                    <span class="card__price--old">3000 руб.</span>
+                    2500 руб.
+                </div>
+                <button class="card__button">В корзину</button>
             </article>
-            <article class="goods__card">
-                <img src="../images/goods3.jpg" alt="Беспроводные наушники" class="goods__image">
-                <h2 class="goods__title">Беспроводные наушники</h2>
-                <p class="goods__desc">Качественный звук и до 20 часов автономной работы. Технология шумоподавления.</p>
-                <p class="goods__price">3500 руб.</p>
-                <button class="goods__button">В корзину</button>
+            <article class="card card--hover card--discount">
+                <img src="../images/goods3.jpg" alt="Беспроводные наушники" class="card__image">
+                <div class="card__discount">-15%</div>
+                <h2 class="card__title">Беспроводные наушники</h2>
+                <p class="card__desc">Качественный звук и до 20 часов автономной работы. Технология шумоподавления.</p>
+                <div class="card__price">
+                    <span class="card__price--old">4000 руб.</span>
+                    3500 руб.
+                </div>
+                <button class="card__button">В корзину</button>
             </article>
         </section>
     </main>
@@ -53,5 +62,6 @@
         <p>&copy; 2024 Интернет-магазин. Все права защищены.</p>
     </footer>
 </div>
+<script src="../script/script.js"></script>
 </body>
 </html>
