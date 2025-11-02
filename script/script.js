@@ -1,4 +1,3 @@
-// script.js - Темы + selected только для товаров по кнопке "В корзину"
 document.addEventListener('DOMContentLoaded', () => {
     const page = document.querySelector('.page');
     const themeToggle = document.getElementById('theme-toggle');
@@ -26,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Selected только для карточек товаров (в goods.html, по кнопке)
     const goodsPage = document.querySelector('.goods__list');
     if (goodsPage) {
         goodsPage.querySelectorAll('.card__button').forEach(button => {
