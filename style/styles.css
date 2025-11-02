@@ -1,19 +1,104 @@
 /* ===== БАЗОВЫЕ СТИЛИ ===== */
+
+/* Система CSS переменных */
+:root {
+    /* Цветовая палитра */
+    --color-primary: #667eea;          /* Основной акцент (градиент начало) */
+    --color-secondary: #764ba2;        /* Вторичный акцент (градиент конец) */
+    --color-header-bg-start: #2c3e50;  /* Фон хедера (градиент начало) */
+    --color-header-bg-end: #34495e;    /* Фон хедера (градиент конец) */
+    --color-nav-bg: #2c3e50;           /* Фон навигации */
+    --color-white: white;              /* Белый */
+    --color-text-dark: #2c3e50;        /* Тёмный текст */
+    --color-text-light: white;         /* Светлый текст */
+    --color-text-gray: #7f8c8d;        /* Серый текст */
+    --color-skill-bg-start: #4facfe;   /* Градиент навыков (начало) */
+    --color-skill-bg-end: #00f2fe;     /* Градиент навыков (конец) */
+    --color-border-accent: #667eea;    /* Акцент для бордеров */
+    --color-about-bg-start: #f8f9fa;   /* Фон "Обо мне" (градиент начало) */
+    --color-about-bg-end: #e9ecef;     /* Фон "Обо мне" (градиент конец) */
+    --color-goods-price: #e74c3c;      /* Цена товаров */
+    --color-black: #000000;            /* Чёрный */
+
+    /* Типографика */
+    --font-family-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-size-header: 50px;          /* Размер заголовка хедера */
+    --font-size-title-lg: 32px;        /* Крупные заголовки */
+    --font-size-title-md: 28px;        /* Средние заголовки */
+    --font-size-title-sm: 24px;        /* Малые заголовки */
+    --font-size-name: 24px;            /* Имя профиля */
+    --font-size-group: 18px;           /* Группа профиля */
+    --font-size-skill: 14px;           /* Навыки */
+    --font-size-experience: 20px;      /* Опыт работы */
+    --font-size-goods-title: 20px;     /* Товары */
+    --font-size-goods-desc: 14px;      /* Описание товаров */
+    --font-size-goods-price: 18px;     /* Цена товаров */
+    --font-weight-bold: 600;           /* Жирный */
+    --font-weight-medium: 500;         /* Средний */
+    --font-weight-light: 300;          /* Лёгкий */
+
+    /* Размеры и отступы */
+    --spacing-unit: 1rem;              /* Базовая единица отступов */
+    --padding-header: 30px;            /* Паддинг хедера */
+    --padding-nav: 20px 0;             /* Паддинг навигации */
+    --padding-content: 40px;           /* Паддинг контента */
+    --padding-card: 25px;              /* Паддинг карточек */
+    --padding-button: 12px 25px;       /* Паддинг кнопок */
+    --gap-nav: 25px;                   /* Гэп в навигации */
+    --gap-skills: 15px;                /* Гэп в навыках */
+    --gap-experience: 20px;            /* Гэп в опыте */
+    --gap-content: 40px;               /* Гэп в контенте */
+    --gap-about: 15px;                 /* Гэп в "Обо мне" */
+    --gap-news: 25px;                  /* Гэп в новостях */
+    --gap-practice: 20px;              /* Гэп в практиках */
+    --gap-goods: 25px;                 /* Гэп в товарах */
+    --gap-contacts: 20px;              /* Гэп в контактах */
+    --gap-social: 15px;                /* Гэп в соцсетях */
+    --gap-modal: 1.5rem;               /* Гэп в модальном окне */
+    --border-radius-base: 25px;        /* Базовый радиус */
+    --border-radius-card: 15px;        /* Радиус карточек */
+    --border-radius-button: 25px;      /* Радиус кнопок */
+    --border-radius-photo: 15px;       /* Радиус фото */
+    --border-radius-goods: 5px;        /* Радиус изображений товаров */
+    --border-radius-modal: 12px;       /* Радиус модального окна */
+    --width-max-container: 1200px;     /* Макс ширина контейнера */
+    --width-content-max: 900px;        /* Макс ширина контента */
+    --width-photo: 220px;              /* Ширина фото профиля */
+    --height-photo: 280px;             /* Высота фото профиля */
+    --height-goods-image: 400px;       /* Высота изображений товаров */
+    --width-skill-min: 150px;          /* Мин ширина навыка */
+    --width-goods-min: 300px;          /* Мин ширина товара */
+    --width-practice-min: 300px;       /* Мин ширина практики */
+    --width-contacts-min: 250px;       /* Мин ширина контактов */
+
+    /* Тени и переходы */
+    --shadow-base: 0 0 30px rgba(0,0,0,0.1);  /* Базовая тень */
+    --shadow-photo: 0 8px 25px rgba(102, 126, 234, 0.3);  /* Тень фото */
+    --shadow-skill: 0 4px 15px rgba(79, 172, 254, 0.3);   /* Тень навыков */
+    --shadow-skill-hover: 0 6px 20px rgba(79, 172, 254, 0.4);  /* Тень навыков hover */
+    --shadow-card: 0 5px 20px rgba(0,0,0,0.08);  /* Тень карточек */
+    --shadow-button-hover: 0 4px 15px rgba(79, 172, 254, 0.4);  /* Тень кнопок hover */
+    --shadow-modal: 0 10px 30px rgba(0, 0, 0, 0.3);  /* Тень модального */
+    --transition-base: all 0.3s ease;   /* Базовый переход */
+    --transition-hover: transform 0.3s ease;  /* Переход для hover */
+}
+
+/* ===== КОНТЕЙНЕР СТРАНИЦЫ ===== */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-family-base);
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
     min-height: 100vh;
 }
 
 /* ===== КОНТЕЙНЕР СТРАНИЦЫ ===== */
 .page-container {
-    max-width: 1200px;
+    max-width: var(--width-max-container);
     margin: 0 auto;
-    background: white;
+    background: var(--color-white);
     min-height: 100vh;
-    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    box-shadow: var(--shadow-base);
     display: grid;
     grid-template-rows: auto auto 1fr auto;
     grid-template-areas:
@@ -25,11 +110,11 @@ body {
 
 /* ===== ШАПКА ===== */
 .header {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-    color: white;
+    background: linear-gradient(135deg, var(--color-header-bg-start) 0%, var(--color-header-bg-end) 100%);
+    color: var(--color-text-light);
     text-align: center;
-    padding: 30px;
-    font-size: 50px;
+    padding: var(--padding-header);
+    font-size: var(--font-size-header);
     font-weight: bold;
     letter-spacing: 2px;
     grid-area: header;
@@ -37,8 +122,8 @@ body {
 
 /* ===== НАВИГАЦИЯ ===== */
 .nav {
-    background: #2c3e50;
-    padding: 20px 0;
+    background: var(--color-nav-bg);
+    padding: var(--padding-nav);
     grid-area: nav;
 }
 
@@ -48,7 +133,7 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: var(--gap-nav);
 }
 
 .nav-item {
@@ -56,12 +141,12 @@ body {
 }
 
 .nav-link {
-    color: white;
+    color: var(--color-text-light);
     text-decoration: none;
-    padding: 12px 25px;
-    border-radius: 25px;
-    transition: all 0.3s ease;
-    font-weight: 500;
+    padding: var(--padding-button);
+    border-radius: var(--border-radius-base);
+    transition: var(--transition-base);
+    font-weight: var(--font-weight-medium);
 }
 
 .nav-link:hover {
@@ -71,21 +156,21 @@ body {
 
 /* ===== ОСНОВНОЙ КОНТЕНТ ===== */
 .content {
-    padding: 40px;
-    max-width: 900px;
+    padding: var(--padding-content);
+    max-width: var(--width-content-max);
     margin: 0 auto;
     grid-area: main;
 
     /* Новое: Flexbox для основного контента */
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: var(--gap-content);
 }
 
 /* ===== ГЛАВНАЯ СТРАНИЦА ===== */
 .profile-header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: var(--gap-content);
 
     /* Новое: Grid для профиля
     grid-template-columns: auto 1fr;
@@ -98,34 +183,34 @@ body {
 }
 
 .profile-title {
-    font-size: 32px;
-    color: #2c3e50;
+    font-size: var(--font-size-title-lg);
+    color: var(--color-text-dark);
     margin-bottom: 10px;
-    font-weight: 300;
+    font-weight: var(--font-weight-light);
     grid-area: title;
 }
 
 .profile-photo {
-    width: 220px;
-    height: 280px;
-    border-radius: 15px;
+    width: var(--width-photo);
+    height: var(--height-photo);
+    border-radius: var(--border-radius-photo);
     object-fit: cover;
-    border: 4px solid #667eea;
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    border: 4px solid var(--color-border-accent);
+    box-shadow: var(--shadow-photo);
     grid-area: photo;
 }
 
 .profile-name {
-    font-size: 24px;
-    color: #2c3e50;
+    font-size: var(--font-size-name);
+    color: var(--color-text-dark);
     margin: 10px 0;
-    font-weight: 500;
+    font-weight: var(--font-weight-medium);
     grid-area: name;
 }
 
 .profile-group {
-    font-size: 18px;
-    color: #7f8c8d;
+    font-size: var(--font-size-group);
+    color: var(--color-text-gray);
     margin: 5px 0;
     grid-area: group;
 }
@@ -133,21 +218,21 @@ body {
 /* ===== ОБО МНЕ ===== */
 .about-me {
     margin: 30px 0;
-    border-left: 5px solid #667eea;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    padding: 25px;
-    border-radius: 15px;
+    border-left: 5px solid var(--color-border-accent);
+    background: linear-gradient(135deg, var(--color-about-bg-start) 0%, var(--color-about-bg-end) 100%);
+    padding: var(--padding-card);
+    border-radius: var(--border-radius-card);
 
     /* Новое: Flexbox для выравнивания */
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: var(--gap-about);
 }
 
 .about-title {
-    font-size: 24px;
+    font-size: var(--font-size-title-sm);
     font-weight: bold;
-    color: #000000;
+    color: var(--color-black);
     margin-bottom: 15px;
     text-align: left;
     padding-left: 10px;
@@ -160,9 +245,9 @@ body {
 }
 
 .skills-title {
-    font-size: 24px;
+    font-size: var(--font-size-title-sm);
     font-weight: bold;
-    color: #000000;
+    color: var(--color-black);
     margin-bottom: 15px;
     text-align: left;
     padding-left: 10px;
@@ -170,20 +255,20 @@ body {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(var(--width-skill-min), 1fr));
+    gap: var(--gap-skills);
     margin: 20px 0;
 }
 
 .skill-tag {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    color: white;
+    background: linear-gradient(135deg, var(--color-skill-bg-start) 0%, var(--color-skill-bg-end) 100%);
+    color: var(--color-text-light);
     padding: 12px 25px;
-    border-radius: 25px;
-    font-weight: 600;
-    font-size: 14px;
-    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
-    transition: all 0.3s ease;
+    border-radius: var(--border-radius-base);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-skill);
+    box-shadow: var(--shadow-skill);
+    transition: var(--transition-base);
     text-align: center;
 
     /* Новое: Flexbox для центрирования */
@@ -194,7 +279,7 @@ body {
 
 .skill-tag:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
+    box-shadow: var(--shadow-skill-hover);
 }
 
 /* ===== ОПЫТ РАБОТЫ ===== */
@@ -203,27 +288,27 @@ body {
 }
 
 .section-title {
-    font-size: 28px;
-    color: #2c3e50;
+    font-size: var(--font-size-title-md);
+    color: var(--color-text-dark);
     text-align: center;
     margin-bottom: 30px;
-    font-weight: 300;
+    font-weight: var(--font-weight-light);
 }
 
 /* Новое: Grid для карточек опыта */
 .experience-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(var(--width-practice-min), 1fr));
+    gap: var(--gap-experience);
 }
 
 .experience-card {
-    background: white;
-    padding: 25px;
+    background: var(--color-white);
+    padding: var(--padding-card);
     border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    border-left: 4px solid #667eea;
-    transition: transform 0.3s ease;
+    box-shadow: var(--shadow-card);
+    border-left: 4px solid var(--color-border-accent);
+    transition: var(--transition-hover);
 
     /* Новое: Flexbox для внутренней структуры */
     display: flex;
@@ -236,24 +321,24 @@ body {
 }
 
 .experience-title {
-    font-size: 20px;
-    color: #2c3e50;
+    font-size: var(--font-size-experience);
+    color: var(--color-text-dark);
     margin: 0;
-    font-weight: 600;
+    font-weight: var(--font-weight-bold);
 }
 
 .experience-desc {
-    color: #7f8c8d;
+    color: var(--color-text-gray);
     line-height: 1.6;
     margin: 0;
 }
 
 /* ===== НОВОСТИ ===== */
 .news-header {
-    font-size: 28px;
-    color: #2c3e50;
+    font-size: var(--font-size-title-md);
+    color: var(--color-text-dark);
     margin-bottom: 30px;
-    font-weight: 300;
+    font-weight: var(--font-weight-light);
     text-align: center;
 }
 
@@ -262,15 +347,15 @@ body {
 
     /* Новое: Grid для новостей */
     display: grid;
-    gap: 25px;
+    gap: var(--gap-news);
 }
 
 .news-card {
-    background: white;
+    background: var(--color-white);
     padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    border-left: 4px solid #667eea;
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--shadow-card);
+    border-left: 4px solid var(--color-border-accent);
 
     /* Новое: Flexbox для структуры карточки */
     display: flex;
@@ -279,16 +364,17 @@ body {
 }
 
 .news-title {
-    font-size: 24px;
-    color: #2c3e50;
+    font-size: var(--font-size-title-sm);
+    color: var(--color-text-dark);
     margin: 0;
     font-weight: bold;
 }
 
 .news-meta {
     font-size: 14px;
-    color: #7f8c8d;
+    color: var(--color-text-gray);
     margin: 0;
+    font-style: italic;
 }
 
 .news-text {
@@ -297,49 +383,35 @@ body {
     margin: 0;
 }
 
-.read-more {
-    align-self: flex-start;
-    color: #4facfe;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.read-more:hover {
-    color: #00f2fe;
-}
-
 /* ===== ПРАКТИКИ ===== */
 .practices-header {
-    font-size: 28px;
-    color: #2c3e50;
+    font-size: var(--font-size-title-md);
+    color: var(--color-text-dark);
     margin-bottom: 30px;
-    font-weight: 300;
+    font-weight: var(--font-weight-light);
     text-align: center;
 }
 
 .practices-section {
     margin-top: 20px;
 
-    /* Изменено: Flexbox для вертикального списка */
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    /* Изменено: Grid для практик */
+    display: grid;
+    gap: var(--gap-news);
 }
 
 .practice-card {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    border-left: 4px solid #4facfe;
+    background: var(--color-white);
+    padding: var(--padding-card);
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--shadow-card);
+    border-left: 4px solid var(--color-skill-bg-start);
 
     /* Изменено: Flexbox для горизонтального расположения */
     display: flex;
     align-items: flex-start;
-    gap: 20px;
-    transition: transform 0.3s ease;
+    gap: var(--gap-practice);
+    transition: var(--transition-hover);
 }
 
 .practice-card:hover {
@@ -356,14 +428,14 @@ body {
 
 .practice-title {
     font-size: 22px;
-    color: #2c3e50;
+    color: var(--color-text-dark);
     margin: 0;
     font-weight: bold;
 }
 
 .practice-meta {
     font-size: 14px;
-    color: #7f8c8d;
+    color: var(--color-text-gray);
     margin: 0;
     font-style: italic;
 }
@@ -376,27 +448,27 @@ body {
 
 /* ===== ТОВАРЫ ===== */
 .goods-header {
-    font-size: 28px;
-    color: #2c3e50;
+    font-size: var(--font-size-title-md);
+    color: var(--color-text-dark);
     margin-bottom: 30px;
-    font-weight: 300;
+    font-weight: var(--font-weight-light);
     text-align: center;
 }
 
 .goods-section {
     /* Изменено: Grid для товаров */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(var(--width-goods-min), 1fr));
+    gap: var(--gap-goods);
     margin-top: 20px;
 }
 
 .goods-card {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    border-left: 4px solid #00f2fe;
+    background: var(--color-white);
+    padding: var(--padding-card);
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--shadow-card);
+    border-left: 4px solid var(--color-skill-bg-end);
     text-align: center;
 
     /* Изменено: Flexbox для карточки товара */
@@ -404,7 +476,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    transition: transform 0.3s ease;
+    transition: var(--transition-hover);
 }
 
 .goods-card:hover {
@@ -413,21 +485,21 @@ body {
 
 .goods-image {
     width: 100%;
-    height: 400px;
+    height: var(--height-goods-image);
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: var(--border-radius-goods);
     margin-bottom: 10px;
 }
 
 .goods-title {
-    font-size: 20px;
-    color: #2c3e50;
+    font-size: var(--font-size-goods-title);
+    color: var(--color-text-dark);
     margin: 0;
     font-weight: bold;
 }
 
 .goods-description {
-    font-size: 14px;
+    font-size: var(--font-size-goods-desc);
     color: #333;
     margin: 0;
     line-height: 1.5;
@@ -435,28 +507,28 @@ body {
 }
 
 .goods-price {
-    font-size: 18px;
-    color: #e74c3c;
+    font-size: var(--font-size-goods-price);
+    color: var(--color-goods-price);
     font-weight: bold;
     margin: 0;
 }
 
 .add-to-cart {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    color: white;
+    background: linear-gradient(135deg, var(--color-skill-bg-start) 0%, var(--color-skill-bg-end) 100%);
+    color: var(--color-text-light);
     padding: 12px 24px;
     border: none;
-    border-radius: 25px;
+    border-radius: var(--border-radius-button);
     cursor: pointer;
     font-size: 14px;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    font-weight: var(--font-weight-bold);
+    transition: var(--transition-base);
     width: 100%;
 }
 
 .add-to-cart:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+    box-shadow: var(--shadow-button-hover);
 }
 
 /* ===== АДАПТИВНОСТЬ ===== */
@@ -476,10 +548,10 @@ body {
 
 /* ===== КОНТАКТЫ ===== */
 .contacts-header {
-    font-size: 28px;
-    color: #2c3e50;
+    font-size: var(--font-size-title-md);
+    color: var(--color-text-dark);
     margin-bottom: 30px;
-    font-weight: 300;
+    font-weight: var(--font-weight-light);
     text-align: center;
 }
 
@@ -487,14 +559,14 @@ body {
     margin-top: 20px;
     text-align: center;
     padding: 40px;
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    border-radius: 15px;
-    border-left: 5px solid #667eea;
+    background: linear-gradient(135deg, var(--color-about-bg-start) 0%, var(--color-about-bg-end) 100%);
+    border-radius: var(--border-radius-card);
+    border-left: 5px solid var(--color-border-accent);
 
     /* Новое: Grid для контактов */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(var(--width-contacts-min), 1fr));
+    gap: var(--gap-contacts);
     align-items: start;
 }
 
@@ -510,39 +582,39 @@ body {
 }
 
 .contact-info strong {
-    color: #2c3e50;
+    color: var(--color-text-dark);
 }
 
 .social-links {
     /* Новое: Flexbox для социальных ссылок */
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: var(--gap-social);
     margin: 10px 0;
 }
 
 .social-link {
-    color: #4facfe;
+    color: var(--color-skill-bg-start);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: var(--font-weight-medium);
     transition: color 0.3s ease;
 }
 
 .social-link:hover {
-    color: #00f2fe;
+    color: var(--color-skill-bg-end);
 }
 
 .contact-button {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    color: white;
+    background: linear-gradient(135deg, var(--color-skill-bg-start) 0%, var(--color-skill-bg-end) 100%);
+    color: var(--color-text-light);
     padding: 15px 40px;
     border: none;
     border-radius: 30px;
     cursor: pointer;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: var(--font-weight-bold);
     margin-top: 20px;
-    transition: all 0.3s ease;
+    transition: var(--transition-base);
     grid-column: 1 / -1;
     justify-self: center;
 }
@@ -554,8 +626,8 @@ body {
 
 /* ===== ФУТЕР ===== */
 .footer {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-    color: white;
+    background: linear-gradient(135deg, var(--color-header-bg-start) 0%, var(--color-header-bg-end) 100%);
+    color: var(--color-text-light);
     text-align: center;
     padding: 30px;
     margin-top: 50px;
@@ -626,6 +698,148 @@ body {
     }
 
     .contact-button {
+        width: 100%;
+    }
+}
+
+/* === СТИЛИ ДЛЯ МОДАЛЬНОГО ОКНА === */
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+    animation: fadeIn 0.3s ease;
+}
+
+dialog {
+    border: none;
+    border-radius: var(--border-radius-modal);
+    padding: 0;
+    box-shadow: var(--shadow-modal);
+    animation: slideIn 0.3s ease;
+    max-width: 500px;
+    width: 90vw;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--color-header-bg-start) 0%, var(--color-header-bg-end) 100%);
+    color: var(--color-text-light);
+    padding: var(--gap-modal);
+    border-radius: var(--border-radius-modal) var(--border-radius-modal) 0 0;
+    margin: 0;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: var(--color-text-light);
+    font-size: 1.5rem;
+}
+
+.modal-content {
+    padding: 2rem;
+}
+
+.form-group {
+    margin-bottom: var(--gap-modal);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-border-accent);
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: var(--transition-base);
+    font-weight: var(--font-weight-bold);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: var(--color-text-light);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #f8f9fa;
+    color: var(--color-text-dark);
+    border: 2px solid #e9ecef;
+}
+
+.btn-secondary:hover {
+    background: #e9ecef;
+}
+
+.required {
+    color: var(--color-goods-price);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    dialog {
+        margin: 1rem;
+        width: calc(100vw - 2rem);
+    }
+    .modal-actions {
+        flex-direction: column;
+    }
+    .btn {
         width: 100%;
     }
 }
